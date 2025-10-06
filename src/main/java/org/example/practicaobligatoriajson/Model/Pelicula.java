@@ -9,6 +9,17 @@ public class Pelicula {
     private String Genero;
 
 
+    public Pelicula(int ID, String titulo, String fecha, String director, String genero) {
+        this.ID = ID;
+        Titulo = titulo;
+        Fecha = fecha;
+        Director = director;
+        Genero = genero;
+    }
+
+    public Pelicula() {
+    }
+
     public int getID() {
         return ID;
     }
@@ -47,5 +58,10 @@ public class Pelicula {
 
     public void setGenero(String genero) {
         Genero = genero;
+    }
+
+    @Override
+    public String toString() {
+        return getTitulo();
     }
 }

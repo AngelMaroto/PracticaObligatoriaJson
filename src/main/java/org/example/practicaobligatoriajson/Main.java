@@ -1,15 +1,28 @@
 package org.example.practicaobligatoriajson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.example.practicaobligatoriajson.Model.Pelicula;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import javafx.application.Application;
 
-import java.io.File;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
-public class Main {
+public class Main extends Application {
 
-    public static void main(String[] args){
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/org/example/practicaobligatoriajson/Interfaz.fxml"));
+            Scene scene = new Scene(loader.load());
+            primaryStage.setTitle("Peliculas");
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+    public static void main(String[] args) {
+        launch(args);
     }
 }
